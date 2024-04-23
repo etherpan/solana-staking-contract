@@ -1,0 +1,33 @@
+{
+    "scripts": {
+        "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+        "start:dev": "parcel index.html",
+        "deploy:token-devnet": "tsc && CLUSTER=https://api.devnet.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/deploy-token.js",
+        "deploy:token-mainnet": "tsc && CLUSTER=https://api.mainnet-beta.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/deploy-token.js",
+        "migrate:init-devnet": "tsc && CLUSTER=https://api.devnet.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/initialize.js",
+        "migrate:init-mainnet": "tsc && CLUSTER=https://api.mainnet-beta.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/initialize.js",
+        "migrate:create-pool-devnet": "tsc && CLUSTER=https://api.devnet.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/create-stake-pool.js",
+        "migrate:create-pool-mainnet": "tsc && CLUSTER=https://api.mainnet-beta.solana.com WALLET=/home/odmin/.config/solana/id.json node build/migrations/create-stake-pool.js"
+    },
+    "dependencies": {
+        "@project-serum/anchor": "^0.24.1",
+        "@solana/spl-token": "^0.3.1",
+        "@solana/wallet-adapter-base": "^0.9.16",
+        "@solana/wallet-adapter-phantom": "^0.9.15"
+    },
+    "devDependencies": {
+        "@types/bn.js": "^5.1.0",
+        "@types/chai": "^4.3.0",
+        "@types/mocha": "^9.0.0",
+        "assert": "^2.0.0",
+        "chai": "^4.3.4",
+        "mocha": "^9.0.3",
+        "parcel": "^2.7.0",
+        "prettier": "^2.6.2",
+        "process": "^0.11.10",
+        "ts-mocha": "^8.0.0",
+        "typescript": "^4.3.5"
+    },
+    "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781"
+}

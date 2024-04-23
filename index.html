@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WMP Staking</title>
+    </head>
+    <body>
+        <div>
+            <div id="connect-wallet">
+                <button>Connect wallet</button>
+            </div>
+
+            <div id="wallet-connected">
+                <div id="staking-ui">
+                    <div id="stake">
+                        <input type="number" name="stake-amount" step="0.01" />
+                        <button>stake</button>
+                    </div>
+                    <div id="unstake">
+                        <input type="number" name="unstake-amount" step="0.01" />
+                        <button>unstake</button>
+                    </div>
+                </div>
+
+                <div id="stake-entry-data">
+                    <p>Stake amount: <span id="stake-amount"></span></p>
+                    <p>Rewards amount: <span id="rewards-amount"></span> <button id="get-rewards">get rewards</button></p>
+                </div>
+
+                <div id="stake-pool-data">
+                    <p>xWMP escrow: <span id="b-escrow"></span></p>
+                </div>
+
+                <div id="token-a-data">
+                    <p>WMP balance: <span id="a-amount"></span></p>
+                </div>
+
+                <div id="token-b-data">
+                    <p>xWMP balance: <span id="b-amount"></span></p>
+                </div>
+
+                <div>
+                    <p>You can claim: <span id="estimated-rewards"></span></p>
+                </div>
+            </div>
+        </div>
+        <script src="./app/src/index.ts" type="module"></script>
+    </body>
+</html>
